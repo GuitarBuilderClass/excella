@@ -6,6 +6,7 @@
     <script src="sum_cell.js"></script>
 </head>
 <body>
+<h1>例</h1>
 <table>
     <tr>
         <th>列名</th>
@@ -43,9 +44,28 @@
         <th><div id="total">0</div></th>
     </tr>
 </table>
-
+<br/>
 <a href="https://github.com/GuitarBuilderClass/excella">ソースコード</a>
 
-
+<h2>ソースコード解説</h2>
+<p>
+    この表のHTMLでは n行m列目のセル は下のようになっている<br>
+    index.html<br>
+    <code>
+        <font color="#0000cd">&lt</font><font color="#ff0000">th</font><font color="#0000cd">&gt</font>
+        <font color="#0000cd">&lt</font><font color="#ff0000">input </font>
+            <font color="#ff8c00">type=</font><font color="#006400">"number" </font>
+            <font color="#ff8c00">class=</font><font color="#006400">"row-n col-m" </font>
+            <font color="#ff8c00">onchange=</font><font color="#006400">"</font><font color="#8a2be2">sumValues(</font><font color="#8a2be2">n, m</font><font color="#8a2be2">)</font><font color="#006400">"</font>&gt
+        <font color="#0000cd">&lt</font><font color="#ff0000">/th</font><font color="#0000cd">&gt</font>
+    </code>
+</p>
+<p>
+    JavaScriptの`.getElementsByClassName(クラス名)` で同一クラス名を一度に取得できるが、返り値の型はHTMLCollectionであり、forEachは使えない。<br>
+    そこでsum()関数内ではひとつずつ取得してvalueを足し、Numberでint型として合計している。<br>
+</p>
+<p>
+    以上の処理を、n行m列マスを変更するたびに、n行の合計とm行の合計および総計を変化させている。
+</p>
 </body>
 </html>
